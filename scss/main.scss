@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  //em = relativt til font size. 1.6 ganger font size.
+
+  background-color: #fafafa;
+
+  .container {
+    //container vil brukes mange steder, derfor class. #mainHeader = ID fordi bare 1 gang
+
+    width: 80%;
+    margin: auto; //take the left over 20% and divides it equally
+    overflow: hidden; // no scrollbars if anything is outside container
+  }
+
+  #mainHeader {
+    background: #333;
+    color: white;
+    text-align: center;
+  }
+
+  #mainNav {
+    background: #ccc;
+    color: black;
+    text-align: center;
+    //Make the bar stick to the top at 0px when scrolling
+    position: -webkit-sticky; // This is for safari to work
+    position: sticky; //this is the normal code
+    top: 0px;
+  }
+
+  #mainNav ul {
+    //Targets the unordered list
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #mainNav li {
+    //targets every list item
+    display: inline; //alt på en linje, default er block
+    padding: 5px 10px;
+  }
+
+  #mainNav a {
+    //targets main nav ancher - altså linksa
+    color: black;
+    text-decoration: none; //fjerner underline fra links
+    font-size: 20px;
+  }
+
+  #mainNav li:hover {
+    //targets hva som skjer når over over hver av list items
+    background: #aaa;
+  }
+
+  #jumbo {
+    background-image: url("../images/thumbnail.png");
+    background-position: center center;
+    min-height: 200px;
+    text-align: center;
+  }
+
+  #jumbo h1 {
+    //bare h1 i jumbo section
+    font-size: 45px;
+    padding-top: 20px;
+    line-height: 1.6em;
+  }
+
+  #main {
+    //for å få sidebar til venstre må man floate main til høyre
+    float: right;
+    width: 70%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    // box-sizing for å ta hensyn til paddings og margins på siden slik at de 70 og 30 prosentsa deles
+  }
+
+  #sidebar {
+    //motsatt av #main
+    float: left;
+    width: 30%;
+    padding: 10px;
+    border-right: 1px solid #333;
+    box-sizing: border-box;
+    letter-spacing: 0.15em;
+    word-spacing: 0.5em;
+  }
+
+  #mainFooter {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+  #pseudoTest::before {
+    content: "before";
+    font-size: 1.5rem;
+    color: #ff652f;
+  }
+  #pseudoTest::after {
+    content: "after";
+    font-size: 1.5rem;
+    color: #ff652f;
+  }
+
+  /*
+  PSEUDO hover::after and ::before example
+  */
+  #pseudoHover {
+    position: relative;
+    overflow: hidden;
+    color: #333;
+    padding: 1rem 2rem;
+  }
+
+  #pseudoHover::before {
+    // This is just a green bg with white border
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    right: 3px;
+    left: 3px;
+    background: rgb(166, 221, 187);
+    border: #fff solid 4px;
+    z-index: -1;
+  }
+
+  #pseudoHover::after {
+    /*this is a orange square rotated 90 deg. and moved (translated) to the left. you have to remove overflow:hidden from #pseudoHover to see it. The point is that when you hover, this will rotate back in place, giving it an effect of someone drawing an outline around the paragraph*/
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ff652f;
+    transform: rotate(-90deg) translate(10%, -220%);
+    // transform-origin: top left;
+    transition: transform 300ms;
+    z-index: -2;
+  }
+
+  #pseudoHover:hover::after {
+    /*when hovering the paragraph with id #pseudoHover, we want to transform the ::after pseudo element back*/
+    transform: rotate(0) translate(0, 0);
+  }
+
+  @media (max-width: 600px) {
+    //alt under 600px får denna koden:
+    #main,
+    #sidebar {
+      //targets #main and #sidebar. Kan target multiple elements med komma
+      width: 100%;
+      float: none;
+      border: none;
+      //basically fjerner side-panel så den havner som vanlig text
+    }
+  }
+
+  /*   p {
+    border: 2px solid black;
+    padding: 10px 20px 10px 20px;
+    // top right bottom left
+    padding: 10px 20px;
+    // top and bottom, right and left
+  } */
+}

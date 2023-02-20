@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  background-color: #fafafa;
+  /*
+  PSEUDO hover::after and ::before example
+  */
+  /*   p {
+    border: 2px solid black;
+    padding: 10px 20px 10px 20px;
+    // top right bottom left
+    padding: 10px 20px;
+    // top and bottom, right and left
+  } */
+}
+body .container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+body #mainHeader {
+  background: #333;
+  color: white;
+  text-align: center;
+}
+body #mainNav {
+  background: #ccc;
+  color: black;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+body #mainNav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body #mainNav li {
+  display: inline;
+  padding: 5px 10px;
+}
+body #mainNav a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+body #mainNav li:hover {
+  background: #aaa;
+}
+body #jumbo {
+  background-image: url("../images/thumbnail.png");
+  background-position: center center;
+  min-height: 200px;
+  text-align: center;
+}
+body #jumbo h1 {
+  font-size: 45px;
+  padding-top: 20px;
+  line-height: 1.6em;
+}
+body #main {
+  float: right;
+  width: 70%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+body #sidebar {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  border-right: 1px solid #333;
+  box-sizing: border-box;
+  letter-spacing: 0.15em;
+  word-spacing: 0.5em;
+}
+body #mainFooter {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+body #pseudoTest::before {
+  content: "before";
+  font-size: 1.5rem;
+  color: #ff652f;
+}
+body #pseudoTest::after {
+  content: "after";
+  font-size: 1.5rem;
+  color: #ff652f;
+}
+body #pseudoHover {
+  position: relative;
+  overflow: hidden;
+  color: #333;
+  padding: 1rem 2rem;
+}
+body #pseudoHover::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  right: 3px;
+  left: 3px;
+  background: rgb(166, 221, 187);
+  border: #fff solid 4px;
+  z-index: -1;
+}
+body #pseudoHover::after {
+  /*this is a orange square rotated 90 deg. and moved (translated) to the left. you have to remove overflow:hidden from #pseudoHover to see it. The point is that when you hover, this will rotate back in place, giving it an effect of someone drawing an outline around the paragraph*/
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ff652f;
+  transform: rotate(-90deg) translate(10%, -220%);
+  transition: transform 300ms;
+  z-index: -2;
+}
+body #pseudoHover:hover::after {
+  /*when hovering the paragraph with id #pseudoHover, we want to transform the ::after pseudo element back*/
+  transform: rotate(0) translate(0, 0);
+}
+@media (max-width: 600px) {
+  body #main,
+  body #sidebar {
+    width: 100%;
+    float: none;
+    border: none;
+  }
+}
