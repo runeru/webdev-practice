@@ -129,6 +129,33 @@ body #pseudoHover:hover::after {
   /*when hovering the paragraph with id #pseudoHover, we want to transform the ::after pseudo element back*/
   transform: rotate(0) translate(0, 0);
 }
+body .flexbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgb(28, 125, 95);
+  justify-content: space-evenly;
+  align-items: flex-end;
+  align-content: center;
+  height: 95vh;
+}
+body .flexbox-item {
+  width: 15%;
+  background: #ff652f;
+  border: 3px solid #272727;
+  color: #fff;
+  font-size: 2rem;
+  padding: 20px;
+  margin: 10px;
+}
+body .item-1 {
+  min-height: 50px;
+}
+body .item-2 {
+  min-height: 100px;
+}
+body .item-3 {
+  min-height: 250px;
+}
 @media (max-width: 600px) {
   body #main,
   body #sidebar {

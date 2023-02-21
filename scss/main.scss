@@ -155,6 +155,49 @@ body {
     transform: rotate(0) translate(0, 0);
   }
 
+  .flexbox-container {
+    display: flex;
+    //flex-wrap gjør som text-wrap i notepad
+    //default er no-wrap
+    flex-wrap: wrap;
+    background: rgb(28, 125, 95);
+    //justify-content beveger ting langs MAIN-AXIS
+    //Main Axis kan bli horisontal eller vertical
+    //depending on hvilken flex layout man bruker
+    justify-content: space-evenly;
+    //align-items flytter ting på cross-axis
+    //altså på kryss av den veien main axis går
+    //Default er align-items: stretch
+    align-items: flex-end;
+
+    //align-items align each item to eachother. Align content
+    //aligns the entire group
+    //med flex-wrap:wrap - we can use align content:
+    align-content: center;
+
+    height: 95vh;
+  }
+
+  .flexbox-item {
+    width: 15%;
+    background: #ff652f;
+    border: 3px solid #272727;
+    color: #fff;
+    font-size: 2rem;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .item-1 {
+    min-height: 50px;
+  }
+  .item-2 {
+    min-height: 100px;
+  }
+  .item-3 {
+    min-height: 250px;
+  }
+
   @media (max-width: 600px) {
     //alt under 600px får denna koden:
     #main,
