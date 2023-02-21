@@ -52,12 +52,13 @@ body #mainNav li:hover {
   background: #aaa;
 }
 body #jumbo {
-  background-image: url("../images/thumbnail.png");
+  background-image: url(/images/banner.jpg);
   background-position: center center;
   min-height: 200px;
   text-align: center;
 }
 body #jumbo h1 {
+  color: #fff;
   font-size: 45px;
   padding-top: 20px;
   line-height: 1.6em;

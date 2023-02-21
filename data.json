@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "name": "Rune",
+      "age": 35,
+      "address": {
+        "street": "ThaiGata 12",
+        "city": "HuaHin",
+        "State": "Prachuap Khiri Khan"
+      },
+      "shoppingList": ["milk", "eggs", "bread"]
+    },
+    {
+      "name": "Ivar",
+      "age": 28,
+      "address": {
+        "street": "ThaiGata 6",
+        "city": "HuaHin",
+        "State": "Prachuap Khiri Khan"
+      },
+      "shoppingList": ["chocolate", "eggs", "candy"]
+    }
+  ]
+}

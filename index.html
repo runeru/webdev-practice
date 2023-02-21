@@ -78,6 +78,25 @@
         <p id="pseudoHover">Also works on hover</p>
       </section>
     </div>
+    <div class="container">
+      <section id="json-test">
+        <h2>Testing JSON</h2>
+        <ul id="list"></ul>
+        <script>
+          fetch("data.json")
+            .then((resp) => resp.json())
+            .then((json) => {
+              // console.log(json.shoppingList[0]);
+              var list = json.users[1].shoppingList;
+              var output = "";
+              for (var i = 0; i < list.length; i++) {
+                output += "<li>" + list[i] + "</li>";
+                document.getElementById("list").innerHTML = output;
+              }
+            });
+        </script>
+      </section>
+    </div>
     <footer id="mainFooter">
       <p>Copyright &copy; 2023 A Thai Life</p>
     </footer>
